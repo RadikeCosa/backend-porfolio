@@ -1,2 +1,4 @@
-package com.radike.porfolio.controller;public class AboutController {
+package com.radike.porfolio.controller;
+
+public class AboutController {
 }

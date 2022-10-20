@@ -1,2 +1,4 @@
-package com.radike.porfolio.controller;public class SocialLinksController {
+package com.radike.porfolio.controller;
+
+public class SocialLinksController {
 }

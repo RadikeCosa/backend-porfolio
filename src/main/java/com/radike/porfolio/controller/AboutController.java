@@ -13,24 +13,24 @@ public class AboutController {
     @Autowired
     private IAboutService aboutService;
 
-    @GetMapping ("/api/about/")
+    @GetMapping ("/porfolio-service/about/")
     public List<About> getAbout() {
         return aboutService.getAbout();
     }
 
-    @PostMapping("/api/about/")
+    @PostMapping("/porfolio-service/about/")
     public String saveAbout(@RequestBody About about) {
         aboutService.saveAbout(about);
         return "el registro fue guardado correctamente bro";
     }
 
-    @DeleteMapping("/api/about/")
+    @DeleteMapping("/porfolio-service/about/")
     public String deleteAbout(@PathVariable Long id) {
         aboutService.deleteAbout(id);
         return "el registro fue eliminado exitosamente ameo";
     }
 
-    @PutMapping("/api/about/")
+    @PutMapping("/porfolio-service/about/")
     public About editAbout (@PathVariable Long id,
                             @RequestParam("title") String newTitle,
                             @RequestParam("description") String newDescription,

@@ -24,13 +24,13 @@ public class AboutController {
         return "el registro fue guardado correctamente bro";
     }
 
-    @DeleteMapping("/porfolio-service/about/")
+    @DeleteMapping("/porfolio-service/about/{id}")
     public String deleteAbout(@PathVariable Long id) {
         aboutService.deleteAbout(id);
         return "el registro fue eliminado exitosamente ameo";
     }
 
-    @PutMapping("/porfolio-service/about/")
+    @PutMapping("/porfolio-service/about/{id}")
     public About editAbout (@PathVariable Long id,
                             @RequestParam("title") String newTitle,
                             @RequestParam("description") String newDescription,

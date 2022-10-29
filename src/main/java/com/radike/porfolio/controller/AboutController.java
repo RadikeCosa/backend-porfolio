@@ -35,11 +35,14 @@ public class AboutController {
                             @RequestParam("title") String newTitle,
                             @RequestParam("description") String newDescription,
                             @RequestParam("image") String newImage) {
+
         About about = aboutService.findAbout(id);
 
         about.setTitle(newTitle);
         about.setDescription(newDescription);
         about.setImage(newImage);
+
+        aboutService.saveAbout(about);
 
         return about;
     }

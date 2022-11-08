@@ -1,6 +1,6 @@
 package com.radike.porfolio.service;
 
-import com.radike.porfolio.model.About;
+
 import com.radike.porfolio.model.Home;
 
 import java.util.List;

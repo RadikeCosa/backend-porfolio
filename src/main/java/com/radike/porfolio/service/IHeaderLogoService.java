@@ -16,7 +16,9 @@ public interface IHeaderLogoService {
     public List<HeaderLogo> getHeaderLogo();
     
     public void saveHeaderLogo (HeaderLogo headerLogo);
+    
+    public void deleteHome (Long id);
   
-    public HeaderLogo FindHeaderLogo (Long id);
+    public HeaderLogo findHeaderLogo (Long id);
 }
 

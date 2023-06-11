@@ -14,11 +14,11 @@ public class Home {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String name;
-    private String lastName;
-    private String title;
+    private String title1;
     private String title2;
-    private String cap;
-    private String cap2;
+    private String title3;
+    private String image1;
+    private String image2;
+    private String icon;
 
 }

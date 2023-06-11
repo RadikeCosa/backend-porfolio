@@ -16,46 +16,40 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 public class LinksController {
-    
 
     @Autowired
     private LinksService linksService;
 
     @GetMapping("/porfolio-service/links/")
-    public List <Links> getHome() {
+    public List<Links> getHome() {
         return linksService.getLinks();
     }
 
-    @PostMapping("/porfolio-service/home/")
-    public String createLink(@RequestBody Links link){
+    @PostMapping("/porfolio-service/links/")
+    public String createLink(@RequestBody Links link) {
         linksService.saveLink(link);
-        return  "el registro fue demasiado bien creado";
+        return "el registro fue demasiado bien creado";
     }
 
-    @DeleteMapping("/porfolio-service/home/{id}")
+    @DeleteMapping("/porfolio-service/links/{id}")
     public String deleteHome(@PathVariable Long id) {
         linksService.deleteLink(id);
         return "con gran respeto te digo que se elimino correctamente y lo vamos a extrañar";
     }
 
-    @PutMapping("/porfolio-service/home/{id}")
-    public Links editLink (@PathVariable Long id,
-                          @RequestParam("title") String newTitle,
-                          @RequestParam("route") String newRoute,
-                          @RequestParam("icon") String newIcon) {
-
+    @PutMapping("/porfolio-service/links/{id}")
+    public Links editLink(@PathVariable Long id, @RequestBody Links updatedLink) {
         Links link = linksService.findLink(id);
 
-        link.setTitle(newTitle);
-        link.setRoute(newRoute);
-        link.setIcon(newIcon);
+        link.setTitle(updatedLink.getTitle());
+        link.setRoute(updatedLink.getRoute());
+        link.setIcon(updatedLink.getIcon());
 
         linksService.saveLink(link);
 
         return link;
-
     }
 
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.PUT})
 public class HomeController {
 
     @Autowired
@@ -32,28 +32,23 @@ public class HomeController {
     }
 
     @PutMapping("/porfolio-service/home/{id}")
-    public Home editHome (@PathVariable Long id,
-                          @RequestParam("name") String newName,
-                          @RequestParam("lastName") String newLastName,
-                          @RequestParam("title") String newTitle,
-                          @RequestParam("title2") String newTitle2,
-                          @RequestParam("cap") String newCap,
-                          @RequestParam("cap2") String newCap2) {
-
+    public Home editHome(@PathVariable Long id, @RequestBody Home updatedHome) {
         Home home = homeService.findHome(id);
 
-        home.setName(newName);
-        home.setLastName(newLastName);
-        home.setTitle(newTitle);
-        home.setTitle2(newTitle2);
-        home.setCap(newCap);
-        home.setCap2(newCap2);
+        home.setTitle1(updatedHome.getTitle1());
+        home.setTitle2(updatedHome.getTitle2());
+        home.setTitle3(updatedHome.getTitle3());
+        home.setImage1(updatedHome.getImage1());
+        home.setImage2(updatedHome.getImage2());
+        home.setIcon(updatedHome.getIcon());
 
         homeService.saveHome(home);
 
         return home;
-
     }
+        
+
+    
 
 
 }

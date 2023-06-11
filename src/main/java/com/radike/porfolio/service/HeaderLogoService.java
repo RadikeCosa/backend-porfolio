@@ -19,7 +19,7 @@ public class HeaderLogoService implements IHeaderLogoService {
     }
 
     @Override
-    public HeaderLogo FindHeaderLogo(Long id) {
+    public HeaderLogo findHeaderLogo(Long id) {
         return headerLogoRepository.findById(id).orElse(null);
     }
 
@@ -27,6 +27,11 @@ public class HeaderLogoService implements IHeaderLogoService {
     public void saveHeaderLogo(HeaderLogo headerLogo) {
         headerLogoRepository.save(headerLogo);
                 }
+
+    @Override
+    public void deleteHome(Long id) {
+        headerLogoRepository.deleteById(id);
+    }
 
     
 }

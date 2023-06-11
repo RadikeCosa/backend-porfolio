@@ -8,16 +8,14 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-public class SocialLinks {
+public class Links {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String github;
-    private String codepen;
-    private String linkedin;
-    private String email;
-    private String twitter;
-    private String devto;
+    private String title;
+    private String route;
+    private String icon;
+    
 
 }

@@ -28,19 +28,19 @@ public class LinksController {
         return linksService.getLinks();
     }
 
-    @PostMapping("/porfolio-service/home/")
+    @PostMapping("/porfolio-service/link/")
     public String createLink(@RequestBody Links link){
         linksService.saveLink(link);
         return  "el registro fue demasiado bien creado";
     }
 
-    @DeleteMapping("/porfolio-service/home/{id}")
+    @DeleteMapping("/porfolio-service/link/{id}")
     public String deleteHome(@PathVariable Long id) {
         linksService.deleteLink(id);
         return "con gran respeto te digo que se elimino correctamente y lo vamos a extrañar";
     }
 
-    @PutMapping("/porfolio-service/home/{id}")
+    @PutMapping("/porfolio-service/link/{id}")
     public Links editLink (@PathVariable Long id,
                           @RequestParam("title") String newTitle,
                           @RequestParam("route") String newRoute,

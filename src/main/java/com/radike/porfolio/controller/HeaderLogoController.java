@@ -45,6 +45,7 @@ public class HeaderLogoController {
 
         headerLogo.setName(updatedHeaderLogo.getName());
         headerLogo.setLastName(updatedHeaderLogo.getLastName());
+        headerLogo.setTitle(updatedHeaderLogo.getTitle());
         headerLogo.setImage(updatedHeaderLogo.getImage());
         headerLogo.setLogo(updatedHeaderLogo.getLogo());
 

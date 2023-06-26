@@ -28,15 +28,15 @@ public class LinksController {
     }
 
     @PostMapping("/porfolio-service/links/")
-    public String createLink(@RequestBody Links link) {
+    public Links createLink(@RequestBody Links link) {
         linksService.saveLink(link);
-        return "el registro fue demasiado bien creado";
+        return link;
     }
 
     @DeleteMapping("/porfolio-service/links/{id}")
-    public String deleteHome(@PathVariable Long id) {
+    public Long deleteHome(@PathVariable Long id) {
         linksService.deleteLink(id);
-        return "con gran respeto te digo que se elimino correctamente y lo vamos a extrañar";
+        return id;
     }
 
     @PutMapping("/porfolio-service/links/{id}")

@@ -16,20 +16,20 @@ public class HomeController {
     private HomeService homeService;
 
     @GetMapping("/porfolio-service/home/")
-    public List <Home> getHome() {
+    public List<Home> getHome() {
         return homeService.getHome();
     }
 
     @PostMapping("/porfolio-service/home/")
-    public String createHome(@RequestBody Home home){
+    public Home createHome(@RequestBody Home home) {
         homeService.saveHome(home);
-        return  "el registro fue demasiado bien creado";
+        return home;
     }
 
     @DeleteMapping("/porfolio-service/home/{id}")
-    public String deleteHome(@PathVariable Long id) {
+    public Long deleteHome(@PathVariable Long id) {
         homeService.deleteHome(id);
-        return "con gran respeto te digo que se elimino correctamente y lo vamos a extrañar";
+        return id;
     }
 
     @PutMapping("/porfolio-service/home/{id}")
@@ -47,9 +47,5 @@ public class HomeController {
 
         return home;
     }
-        
-
-    
-
 
 }

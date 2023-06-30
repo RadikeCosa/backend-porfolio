@@ -35,14 +35,25 @@ public class HomeController {
     @PutMapping("/porfolio-service/home/{id}")
     public Home editHome(@PathVariable Long id, @RequestBody Home updatedHome) {
         Home home = homeService.findHome(id);
-
-        home.setTitle1(updatedHome.getTitle1());
-        home.setTitle2(updatedHome.getTitle2());
-        home.setTitle3(updatedHome.getTitle3());
-        home.setImage1(updatedHome.getImage1());
-        home.setImage2(updatedHome.getImage2());
-        home.setIcon(updatedHome.getIcon());
-
+        
+        if(updatedHome.getTitle1() != null){
+            home.setTitle1(updatedHome.getTitle1());
+        }
+        if(updatedHome.getTitle2() != null){
+            home.setTitle2(updatedHome.getTitle2());
+        }
+        if(updatedHome.getTitle3() != null){
+            home.setTitle3(updatedHome.getTitle3());
+        }
+        if(updatedHome.getImage1() != null){
+            home.setImage1(updatedHome.getImage1());
+        }
+        if(updatedHome.getImage2() != null){
+            home.setImage2(updatedHome.getImage2());
+        }
+        if(updatedHome.getIcon() != null){
+            home.setIcon(updatedHome.getIcon());
+        }
         homeService.saveHome(home);
 
         return home;

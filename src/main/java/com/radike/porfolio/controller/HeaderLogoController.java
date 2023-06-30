@@ -43,15 +43,23 @@ public class HeaderLogoController {
     public HeaderLogo editHeaderLogo(@PathVariable Long id, @RequestBody HeaderLogo updatedHeaderLogo) {
         HeaderLogo headerLogo = headerLogoService.findHeaderLogo(id);
 
-        headerLogo.setName(updatedHeaderLogo.getName());
-        headerLogo.setLastName(updatedHeaderLogo.getLastName());
-        headerLogo.setTitle(updatedHeaderLogo.getTitle());
+        if (updatedHeaderLogo.getName() != null) {
+            headerLogo.setName(updatedHeaderLogo.getName());
+        }
+
+        if (updatedHeaderLogo.getLastName() != null) {
+            headerLogo.setLastName(updatedHeaderLogo.getLastName());
+        }
+
+        if (updatedHeaderLogo.getTitle() != null) {
+            headerLogo.setTitle(updatedHeaderLogo.getTitle());
+        }
+
         headerLogo.setImage(updatedHeaderLogo.getImage());
         headerLogo.setLogo(updatedHeaderLogo.getLogo());
 
         headerLogoService.saveHeaderLogo(headerLogo);
 
         return headerLogo;
-
     }
 }

@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="backend-porfolio" type="Application" factoryName="Application">
+    <envs>
+      <env name="DATASOURCE_PASSWORD" value="Sw38gB72okT2XBccJpoa" />
+      <env name="DATASOURCE_URL" value="jdbc:mysql://boeqg27j1zr7pmgct7uj-mysql.services.clever-cloud.com:3306/boeqg27j1zr7pmgct7uj" />
+      <env name="DATASOURCE_USERNAME" value="uqqfhaad3l0pyywy" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.radike.porfolio.PorfolioApplication" />
+    <module name="porfolio" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

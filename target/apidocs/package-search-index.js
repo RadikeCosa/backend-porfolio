@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.radike.porfolio"},{"l":"com.radike.porfolio.controller"},{"l":"com.radike.porfolio.model"},{"l":"com.radike.porfolio.repository"},{"l":"com.radike.porfolio.service"}]
